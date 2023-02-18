@@ -1,0 +1,19 @@
+body {
+    background: #59bdff;
+    background: linear-gradient(to right, #ffffff, #ffffff);
+}
+.bg{
+    background-image: url(/static/images/logo.png);
+    background-size: contain;
+    background-position: center center;
+}
+.texto{
+    color: white;
+    font-size: 40px; /* Aumenta el tamaño de letra */
+    font-weight: bold; /* Pone el texto en negritas */
+    text-align: center; /* Centra horizontalmente el texto */
+    flex-grow: 1; /* Hace que el texto ocupe todo el ancho restante del contenedor */
+}
+.bg-color{
+    background-color: #19465C;
+}
