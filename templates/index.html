@@ -9,34 +9,70 @@
 
   </head>
   <body>
+
+    
     <!--NAV BAR-->
     <nav class="navbar navbar-expand-lg bg-color">
       <img src="/static/images/logo_fc.png" width="100px" height="100px" alt="Logo">
       <span class="texto">DesdeElCieloFC</span>
     </nav>
+
+
      <!-- CONTENIDO -->
-     <div class = "container w-75 bg-primary mt-5 mb-5 rounded shadow">
+    <div class = "container w-75 bg-dark mt-5 mb-5 rounded shadow">
       <div class="row align-items-lg-stretch">
-          <!-- Primera columna -->
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/drALb0iG66k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-          </iframe>
-          <!-- Segunda columna -->
+          
+          <iframe width="560" height="660" src="https://www.youtube.com/embed/drALb0iG66k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          
           <div class="col bg-white p-5 rounded-end">
               <div class="text-end">
                   <img src="/static/images/logo.png" width="48" alt="">
               </div>
 
               <h2 class="fw-bold text-center py-5">Welcome to San Diego</h2>
-              <!-- Login-->
-              <div class="text-black-50">
+              
+              <div class="text-black-50" style="margin-bottom: 50px;">
                 Welcome to San Diego, California - a beautiful coastal city known for its perfect weather, stunning beaches, and rich culture.
 
                 With a population of over 1.43 million people, San Diego is the eighth largest city in the United States. It's a diverse and dynamic city, attracting visitors and residents from all over the world.
-
               </div>
+              
+              <div style="margin-bottom: 50px;">
+                <h4 class="text-black-50 text-center" style="margin-bottom: 25px;">Look at the Mayra's review</h1>
+                <div class="d-flex justify-content-center">
+                  <iframe width="560" height="315" src="https://www.youtube.com/embed/GQWZzV8s8-U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              </div>
+
+
+              {% for d in data %}
+                <div class="comment">
+                  <div class="comment-user">
+                    <span class="comment-fullname">{{d.fullname}}</span>
+                    <span class="comment-email">{{d.email}}</span>
+                  </div>
+                  <div class="comment-content">
+                    <p>{{d.comment}}</p>
+                  </div>
+                </div>
+              {% endfor %}
+
+
+              <div class="comment-box">
+                <h2>Comments</h2>
+                <form action="/addComment" method="post">
+                  <input type="text" name="full_name" placeholder="Full Name...">
+                  <input type="email" name="email" placeholder="Email Address...">
+                  <textarea name="comment" placeholder="Type Your Comment..."></textarea>
+                  <button type="submit">Submit Comment</button>
+                </form>
+              </div>
+
           </div>
       </div>
-  </div>
+    </div>
+
+
     <!-- FOOTER -->
     <div class="container-fluid">
       <div class="row p-5" style="background: linear-gradient(to right, #005b9f, #005b9f)">
